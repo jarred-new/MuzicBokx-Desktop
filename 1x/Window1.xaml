@@ -1,0 +1,122 @@
+﻿<Window
+	xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+	xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+	xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" mc:Ignorable="d"
+	x:Class="MuzicBokx.Window1"
+	x:Name="Window"
+	Title="MuzicBoxz - by Jarred"
+	Width="1131" Height="663" WindowStyle="None" WindowState="Maximized" xmlns:d="http://schemas.microsoft.com/expression/blend/2008" ResizeMode="NoResize" 
+    Loaded="Window_Loaded" KeyDown="Window_KeyDown" MouseMove="Window_MouseMove" MouseDown="Window_MouseDown">
+
+	<Window.Resources>
+		<Style x:Key="MetroButton" BasedOn="{x:Null}" TargetType="{x:Type Button}">
+			<Setter Property="Template">
+				<Setter.Value>
+					<ControlTemplate TargetType="{x:Type Button}">
+						<Grid>
+							<Rectangle Fill="{x:Null}" Stroke="#FFFFFFFF" StrokeThickness="6"/>
+							<ContentPresenter SnapsToDevicePixels="{TemplateBinding SnapsToDevicePixels}" HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}" VerticalAlignment="{TemplateBinding VerticalContentAlignment}" RecognizesAccessKey="True"/>
+						</Grid>
+						<ControlTemplate.Triggers>
+							<Trigger Property="IsFocused" Value="True"/>
+							<Trigger Property="IsDefaulted" Value="True"/>
+							<Trigger Property="IsMouseOver" Value="True"/>
+							<Trigger Property="IsPressed" Value="True"/>
+							<Trigger Property="IsEnabled" Value="False"/>
+						</ControlTemplate.Triggers>
+					</ControlTemplate>
+				</Setter.Value>
+			</Setter>
+		</Style>
+		<Storyboard x:Key="OnClick1">
+			<DoubleAnimationUsingKeyFrames BeginTime="00:00:00" Storyboard.TargetName="textBlock" Storyboard.TargetProperty="(UIElement.Opacity)">
+				<SplineDoubleKeyFrame KeyTime="00:00:00" Value="0"/>
+				<SplineDoubleKeyFrame KeyTime="00:00:01" Value="1"/>
+				<SplineDoubleKeyFrame KeyTime="00:00:05" Value="1"/>
+				<SplineDoubleKeyFrame KeyTime="00:00:05.9000000" Value="0"/>
+			</DoubleAnimationUsingKeyFrames>
+		</Storyboard>
+	</Window.Resources>
+	<Window.Triggers>
+		
+	</Window.Triggers>
+
+	<Grid x:Name="LayoutRoot" Background="#FF000000">
+        <MediaElement x:Name="gradient" Source="./Media/gradient1.mp4" Stretch="UniformToFill" LoadedBehavior="Manual" UnloadedBehavior="Manual" OpacityMask="#FF000000" MediaEnded="gradient_MediaEnded" Volume="0" Margin="0,0,0,-8" />
+		
+		<MediaElement Visibility="Visible" HorizontalAlignment="Right" Margin="0,0,8,8" x:Name="Music" VerticalAlignment="Bottom" Width="104" Height="46" LoadedBehavior="Manual" UnloadedBehavior="Manual" MediaEnded="Music_MediaEnded"/>
+        <TextBlock Margin="149,122,23,0" Foreground="#FFFFFFFF" TextWrapping="Wrap" VerticalAlignment="Top" Height="29" Visibility="Hidden" x:Name="MusicName" FontFamily="Eras ITC" FontSize="24"><Run FontFamily="Eras ITC" FontSize="24" Text="Music Name"/></TextBlock>
+		<TextBlock Foreground="#FFFFFFFF" TextWrapping="Wrap" Margin="149,158.823,23,0" x:Name="positionText" VerticalAlignment="Top" Height="25" Visibility="Hidden" FontFamily="Eras ITC" FontSize="16"><Run FontFamily="Eras ITC" FontSize="20" Text="00:00:00"/></TextBlock>
+        <Border Height="283" Margin="0,0,0,5" Name="border1" VerticalAlignment="Bottom">
+            <Border.BitmapEffect>
+                <BevelBitmapEffect EdgeProfile="CurvedIn" Smoothness="100" Relief="0.1" />
+            </Border.BitmapEffect>
+            <Grid HorizontalAlignment="Stretch" VerticalAlignment="Stretch">
+                <Button Click="openButton_Click" FontFamily="Eras ITC" FontSize="20" FontWeight="Bold" Foreground="White" Height="45" HorizontalAlignment="Left" Margin="28,0,0,83.956" Name="openButton" Style="{DynamicResource MetroButton}" VerticalAlignment="Bottom" Width="213">OPEN</Button>
+                <StackPanel Background="{x:Null}" Margin="440.989,134.377,432.761,101.623" Orientation="Horizontal" Panel.ZIndex="1" HorizontalAlignment="Center">
+                    <StackPanel.Resources>
+                        <Style TargetType="{x:Type Grid}">
+                            <Setter Property="FrameworkElement.Margin" Value="0,10,0,0" />
+                        </Style>
+                    </StackPanel.Resources>
+                    <StackPanel.Effect>
+                        <DropShadowEffect />
+                    </StackPanel.Effect>
+                    <Grid Height="37" MouseDown="Play_MouseDown" Name="Play" Width="20.75">
+                        <Path Data="M155.5,386.5L155.5,411 173.25,398.75" Fill="White" Stretch="Fill" Stroke="{x:Null}" StrokeThickness="6" />
+                    </Grid>
+                    <Border Height="22.25" Width="14" />
+                    <Grid Height="41" MouseDown="Pause_MouseDown" Name="Pause" Width="32.25">
+                        <Rectangle Fill="White" HorizontalAlignment="Left" Stroke="{x:Null}" StrokeThickness="6" Width="13" />
+                        <Rectangle Fill="White" HorizontalAlignment="Right" Stroke="{x:Null}" StrokeThickness="6" Width="13" />
+                    </Grid>
+                    <Border Height="22.25" Width="14" />
+                    <Grid Height="37" MouseDown="Rewind_MouseDown" Name="Rewind" Width="41.5">
+                        <Grid Margin="0" RenderTransformOrigin="0.5,0.5">
+                            <Grid.RenderTransform>
+                                <TransformGroup>
+                                    <ScaleTransform ScaleX="1" ScaleY="1" />
+                                    <SkewTransform AngleX="0" AngleY="0" />
+                                    <RotateTransform Angle="-180" />
+                                    <TranslateTransform X="0" Y="0" />
+                                </TransformGroup>
+                            </Grid.RenderTransform>
+                            <Path Data="M155.5,386.5L155.5,411 173.25,398.75" Fill="White" HorizontalAlignment="Left" Stretch="Fill" Stroke="{x:Null}" StrokeThickness="6" Width="20.75" />
+                            <Path Data="M155.5,386.5L155.5,411 173.25,398.75" Fill="White" HorizontalAlignment="Right" Stretch="Fill" Stroke="{x:Null}" StrokeThickness="6" Width="20.75" />
+                        </Grid>
+                    </Grid>
+                    <Border Height="22.25" Width="14" />
+                    <Grid Height="37" MouseDown="Stop_MouseDown" Name="Stop" Width="35.25">
+                        <Rectangle Fill="White" Stroke="{x:Null}" StrokeThickness="6" />
+                    </Grid>
+                    <Border Height="22.25" Width="14" />
+                    <Grid Height="37" MouseDown="FastForward_MouseDown" Name="FastForward" Width="41.5">
+                        <Path Data="M155.5,386.5L155.5,411 173.25,398.75" Fill="White" HorizontalAlignment="Left" Stretch="Fill" Stroke="{x:Null}" StrokeThickness="6" Width="20.75" />
+                        <Path Data="M155.5,386.5L155.5,411 173.25,398.75" Fill="White" HorizontalAlignment="Right" Stretch="Fill" Stroke="{x:Null}" StrokeThickness="6" Width="20.75" />
+                    </Grid>
+                </StackPanel>
+                <TextBlock Height="46" Margin="494.989,68.958,468.294,0" Name="PauseText" TextWrapping="Wrap" VerticalAlignment="Top" Visibility="Hidden" HorizontalAlignment="Center"><Run FontFamily="Eras ITC" FontSize="36" FontWeight="Bold" Foreground="#FFE50000"><Run.TextDecorations><TextDecoration Location="Underline" /></Run.TextDecorations>PAUSE</Run></TextBlock>
+                <Button Click="aboutButton_Click" FontFamily="Eras ITC" FontSize="20" FontWeight="Bold" Foreground="White" Height="45" HorizontalAlignment="Right" Margin="0,94.419,22,0" Name="aboutButton" Style="{DynamicResource MetroButton}" VerticalAlignment="Top" Width="134">ABOUT</Button>
+                <CheckBox Background="#FF2D2D2D" FontFamily="Eras ITC" FontSize="22" Foreground="White" Height="28.333" Margin="494.989,0,483.857,61.957" Name="loopMusic" VerticalAlignment="Bottom" HorizontalAlignment="Center">Loop Music</CheckBox>
+                <Button Click="loadBgButton_Click" FontFamily="Eras ITC" FontSize="20" FontWeight="Bold" Foreground="White" HorizontalAlignment="Left" Margin="28,99.419,0,136.581" Name="loadBgButton" Style="{DynamicResource MetroButton}" Width="213">LOAD BG</Button>
+                <Button Click="resetButton_Click" FontFamily="Eras ITC" FontSize="20" FontWeight="Bold" Foreground="White" Height="45" HorizontalAlignment="Right" Margin="0,0,22,90.248" Name="resetButton" Style="{DynamicResource MetroButton}" VerticalAlignment="Bottom" Width="134">RESET</Button>
+                <Button Click="hideButton_Click" FontFamily="Eras ITC" FontSize="20" FontWeight="Bold" Foreground="White" Height="45" HorizontalAlignment="Right" Margin="0,0,22,36" Name="hideButton" Style="{DynamicResource MetroButton}" VerticalAlignment="Bottom" Width="134">HIDE</Button>
+            </Grid>
+                
+            <Border.Background>
+                <LinearGradientBrush StartPoint="0,0" EndPoint="0,1" Opacity="0.5">
+                    <GradientStop Color="Tan" Offset="0.0"/>
+                    <GradientStop Color="Chocolate" Offset="0.5"/>
+                    <GradientStop Color="Brown" Offset="1.0"/>
+                </LinearGradientBrush>
+            </Border.Background>
+        </Border>
+        <TextBlock HorizontalAlignment="Left" Margin="149,91,0,0" Name="SpaceRemind" Width="306" Foreground="Cyan" FontFamily="Eras ITC Bold" FontSize="20" Height="25" VerticalAlignment="Top" Visibility="Hidden">
+            Press SPACE to show controls
+            <TextBlock.Effect>
+                <DropShadowEffect BlurRadius="6"></DropShadowEffect>
+            </TextBlock.Effect>
+        </TextBlock>
+        <Image Height="67" HorizontalAlignment="Right" Margin="0,13,8,0" x:Name="close" Stretch="Fill" VerticalAlignment="Top" Width="73" Source="./close.png" MouseDown="close_MouseDown"/>
+    </Grid>
+</Window>

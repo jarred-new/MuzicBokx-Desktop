@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?><?xml-stylesheet type='text/xsl' href='_UpgradeReport_Files/UpgradeReport.xslt'?><UpgradeLog>
+<Properties><Property Name="Solution" Value="MuzicBokx">
+</Property><Property Name="Solution File" Value="C:\Users\JarredIzKool\Documents\Expression\Expression Blend Projects\MuzicBokx\MuzicBokx.sln">
+</Property><Property Name="Date" Value="Monday, 2 June 2025">
+</Property><Property Name="Time" Value="14:42:33 pm">
+</Property></Properties><Event ErrorLevel="0" Project="MuzicBokx" Source="MuzicBokx.csproj" Description="Project file successfully backed up as C:\Users\JarredIzKool\Documents\Expression\Expression Blend Projects\MuzicBokx\Backup\MuzicBokx.csproj">
+</Event><Event ErrorLevel="0" Project="MuzicBokx" Source="App.xaml.cs" Description="File successfully backed up as C:\Users\JarredIzKool\Documents\Expression\Expression Blend Projects\MuzicBokx\Backup\App.xaml.cs">
+</Event><Event ErrorLevel="0" Project="MuzicBokx" Source="AssemblyInfo.cs" Description="File successfully backed up as C:\Users\JarredIzKool\Documents\Expression\Expression Blend Projects\MuzicBokx\Backup\AssemblyInfo.cs">
+</Event><Event ErrorLevel="0" Project="MuzicBokx" Source="Window1.xaml.cs" Description="File successfully backed up as C:\Users\JarredIzKool\Documents\Expression\Expression Blend Projects\MuzicBokx\Backup\Window1.xaml.cs">
+</Event><Event ErrorLevel="0" Project="MuzicBokx" Source="App.xaml" Description="File successfully backed up as C:\Users\JarredIzKool\Documents\Expression\Expression Blend Projects\MuzicBokx\Backup\App.xaml">
+</Event><Event ErrorLevel="0" Project="MuzicBokx" Source="Window1.xaml" Description="File successfully backed up as C:\Users\JarredIzKool\Documents\Expression\Expression Blend Projects\MuzicBokx\Backup\Window1.xaml">
+</Event><Event ErrorLevel="0" Project="MuzicBokx" Source="MuzicBokx.csproj" Description="Project converted successfully">
+</Event><Event ErrorLevel="3" Project="MuzicBokx" Source="MuzicBokx.csproj" Description="Converted">
+</Event><Event ErrorLevel="0" Project="MuzicBokx" Source="MuzicBokx.csproj" Description="Scan complete: Upgrade not required for project files.">
+</Event></UpgradeLog>

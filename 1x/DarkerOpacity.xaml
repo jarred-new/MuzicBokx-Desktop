@@ -1,0 +1,8 @@
+﻿<Window x:Class="MuzicBokx.DarkerOpacity"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    Title="DarkerOpacity" Height="300" Width="300" ResizeMode="NoResize" WindowState="Maximized" WindowStyle="None" Background="DarkGray" Opacity="0.5" AllowsTransparency="True" ShowInTaskbar="False">
+    <Grid>
+        
+    </Grid>
+</Window>
