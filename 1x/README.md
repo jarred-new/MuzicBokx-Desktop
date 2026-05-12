@@ -1,4 +1,6 @@
 NOTE: this project requires .NET 3.0 and Visual Studio 2008 and above.
+      Also, this is the latest and the last version of 1x (version 1.5) as Github limits the file size of the bin folder that contains 1.0, beta, and 1.5.
+      You can download the zip file in the releases...
 
 You can also use Expression Blend or Blend for Visual Studio 2013 and above
 if you want for more design, effects, etc.
